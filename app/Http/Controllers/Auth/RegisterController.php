@@ -29,7 +29,7 @@ class RegisterController extends Controller
             'password' => $request->input('password')
         ]);
 
-        return redirect(route('login.show'));
+        return redirect(route('login'));
         // dd($user);
     }
 }

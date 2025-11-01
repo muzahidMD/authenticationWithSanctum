@@ -6,10 +6,14 @@
             <div class="flex items-start justify-between">
                 <div>
                     <h1 class="text-xl font-semibold">Dashboard</h1>
-                    <p class="mt-1 text-sm text-gray-600">You’re signed in as <span
-                            class="font-medium text-gray-900">{{ auth()->user()->name ?? 'User' }}</span>.</p>
+                    <p class="mt-1 text-sm text-gray-600">You’re signed in as
+                        <span class="font-medium text-gray-900">{{ auth()->user()->name ?? 'User' }}</span>.
+                    </p>
+                    <p class="mt-1 text-sm text-gray-600">Your Email is
+                        <span class="font-medium text-gray-900 underline">{{ auth()->user()->email }}</span>
+                    </p>
                 </div>
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit"
                         class="inline-flex items-center rounded-md border border-transparent bg-gray-900 px-3 py-1.5 text-sm font-medium text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
